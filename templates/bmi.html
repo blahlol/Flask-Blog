@@ -1,0 +1,18 @@
+{% extends 'base.html' %} <!-- this inherits all the base code from the mentioned file. Any new code can then be plugged in between the specified blocks as shown below-->
+
+{% block head %}
+<link rel='stylesheet' type='text/css' href="{{url_for('static',filename='/style.css')}}">
+<title>BMI Calculator</title>
+{% endblock %}
+
+{% block body %}
+<form method='POST' action="/">
+		Enter height:<input type="text", name="height"><br><br>
+		Enter weight:<input type="text", name="weight"><br><br>
+		<button type="submit">Submit</button>
+	</form>
+
+	{% if bmi %}
+	<p>Your bmi is {{bmi}}</p>
+	{% endif %}
+{% endblock %}

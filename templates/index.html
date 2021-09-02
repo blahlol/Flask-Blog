@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+<h1> All Posts!</h1>
+	{% for e in value%}
+		{% if e.author %}
+		<p>Author: {{e.author}}</p>
+		{% else %}
+		<small>Author: N/A</small>
+		{% endif %}
+		<h3>Content: {{e.content}}</h3><hr>	
+		<a href="/posts/edit/{{e.id}}" class='button'>Edit</a>
+		<a href="/posts/delete/{{e.id}}" class='delete'>Delete</a>
+		<hr>
+	{% endfor %}
+	{% endblock %}

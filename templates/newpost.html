@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>New Post</title>
+{% endblock %}
+
+{% block body %}
+<h1>Add a post</h1>
+<form name="form1"  action='/newpost' method='POST'> <!--action is based on route values-->
+	Author:<input name='author' id='author' class='textinput' type='text'><br><br>
+	Content:<input name='content' id='content' type='text' class='textinput'> <br><br><br>
+	<input type="submit" name="submit" value="submit">
+</form>
+{% endblock %}
